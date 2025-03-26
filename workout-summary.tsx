@@ -22,11 +22,11 @@ export default function WorkoutSummaryTemplate() {
   }, [id]);
 
   if (!workout) {
-    return <div>Loading...</div>;
+    return <div>Loading....</div>;
   }
 
   return (
-    <div className="bg-background min-h-screen p-4 md:p-8">
+    <div className="min-h-screen bg-background p-4 md:p-8">
       <div className="mx-auto max-w-4xl">
         <Card className="border-4 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
           <div className="space-y-6">
@@ -35,21 +35,21 @@ export default function WorkoutSummaryTemplate() {
                 <CheckCircle className="h-12 w-12" />
               </div>
               <h1 className="mb-2 text-3xl font-black">Workout Complete!</h1>
-              <p className="text-muted-foreground text-lg">
+              <p className="text-lg text-muted-foreground">
                 Great job, {workout.bmiData.name}! You&apos;ve completed all
                 exercises.
               </p>
             </div>
 
             <div className="space-y-4">
-              <div className="bg-primary/10 rounded-md border-2 border-black p-4">
+              <div className="rounded-md border-2 border-black bg-primary/10 p-4">
                 <h2 className="mb-2 font-bold">Workout Summary</h2>
                 <p>BMI: {workout.bmiData.value}</p>
                 <p>Category: {workout.bmiData.category}</p>
                 <p>Date: {new Date(workout.date).toLocaleDateString()}</p>
               </div>
 
-              <div className="bg-primary/10 rounded-md border-2 border-black p-4">
+              <div className="rounded-md border-2 border-black bg-primary/10 p-4">
                 <h2 className="mb-2 font-bold">Completed Exercises</h2>
                 <ul className="space-y-2">
                   {workout.exercises.map((exercise, index) => (
@@ -74,14 +74,14 @@ export default function WorkoutSummaryTemplate() {
             <div className="grid grid-cols-2 gap-4">
               <Button
                 onClick={() => router.push("/")}
-                className="bg-primary border-4 border-black py-6 font-bold shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
+                className="border-4 border-black bg-primary py-6 font-bold shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
               >
                 <Home className="mr-2 h-5 w-5" />
                 Home
               </Button>
               <Button
                 onClick={() => router.push("/history")}
-                className="bg-primary border-4 border-black py-6 font-bold shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
+                className="border-4 border-black bg-primary py-6 font-bold shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
               >
                 <History className="mr-2 h-5 w-5" />
                 View History
